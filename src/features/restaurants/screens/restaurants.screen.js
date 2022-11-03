@@ -4,7 +4,7 @@ import { Searchbar } from "react-native-paper";
 
 import { RestaurantInfo } from "../components/restaurant-info.component";
 
-export const RestaurantsScreen = () => {
+export const RestaurantsScreen = () => (
   <SafeAreaView style={styles.container}>
     <View style={styles.search}>
       <Searchbar placeholder="Search" />
@@ -12,8 +12,8 @@ export const RestaurantsScreen = () => {
     <View style={styles.list}>
       <RestaurantInfo />
     </View>
-  </SafeAreaView>;
-};
+  </SafeAreaView>
+);
 
 const styles = StyleSheet.create({
   container: {
