@@ -21,12 +21,18 @@ const RestaurantListContainer = styled(View)`
   background-color: ${(props) => props.theme.colors.bg.primary};
 `;
 
+const RestaurantList = styled(FlatList).attrs({
+  contentContainerStyle: {
+    padding: 16,
+  },
+})``;
+
 export const RestaurantsScreen = () => (
   <SafeArea>
     <SearchContainer>
       <Searchbar placeholder="Search" />
     </SearchContainer>
-    <FlatList
+    <RestaurantList
       data={[
         { name: 1 },
         { name: 2 },
