@@ -10,6 +10,20 @@ import { useFonts as useLato, Lato_400Regular, Lato_700Bold } from '@expo-google
 
 import { theme } from "./src/infraestructure/theme";
 import { RestaurantsScreen } from "./src/features/restaurants/screens/restaurants.screen";
+import { SafeArea } from "./src/components/utils/safe-area.component";
+
+const Tab = createBottomTabNavigator();
+
+const Settings = () => (
+  <SafeArea>
+    <Text>Settings</Text>
+  </SafeArea>
+);
+const Map = () => (
+  <SafeArea>
+    <Text>Map</Text>
+  </SafeArea>
+);
 
 export default function App() {
 
@@ -46,16 +60,16 @@ export default function App() {
 
   return (
     <>
-    <NavigationContainer>
       <ThemeProvider theme={theme}>
-        <Tab.Navigator>
-        <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Settings" component={SettingsScreen} />
-        <Tab.Screen name="Restaurant" component={RestaurantsScreen} />
-      </Tab.Navigator>
+        <NavigationContainer>
+          <Tab.Navigator>
+            <Tab.Screen name="Restaurants" component={RestaurantsScreen} />
+            <Tab.Screen name="Map" component={Map} />
+            <Tab.Screen name="Settings" component={Settings} />
+          </Tab.Navigator>
+        </NavigationContainer>
       </ThemeProvider>
       <ExpoStatusBar style="auto" />
-    </NavigationContainer>
     </>
   );
 }
